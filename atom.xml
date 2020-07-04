@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>全世界最好的Sky</title>
-  <icon>https://www.bestsky.club/icon.png</icon>
+  
   
   <link href="/atom.xml" rel="self"/>
   
@@ -23,14 +23,13 @@
     <published>2020-06-30T13:53:34.216Z</published>
     <updated>2020-06-30T16:58:49.669Z</updated>
     
+    <content type="html"><![CDATA[<h1 id="努力建设中··········"><a href="#努力建设中··········" class="headerlink" title="努力建设中··········"></a>努力建设中··········</h1>]]></content>
+    
     <summary type="html">
     
       
       
-        
-        
-          &lt;!-- build time:Sat Jul 04 2020 13:53:27 GMT+0800 (GMT+08:00) --&gt;&lt;h1 id=&quot;努力建设中··········&quot;&gt;&lt;a href=&quot;#努力建设中··········&quot; class=&quot;headerlink&quot;
-        
+        &lt;h1 id=&quot;努力建设中··········&quot;&gt;&lt;a href=&quot;#努力建设中··········&quot; class=&quot;headerlink&quot; title=&quot;努力建设中··········&quot;&gt;&lt;/a&gt;努力建设中··········&lt;/h1&gt;
       
     
     </summary>
