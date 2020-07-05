@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.bestsky.club/"/>
-  <updated>2020-07-05T04:23:35.888Z</updated>
+  <updated>2020-07-05T04:25:52.528Z</updated>
   <id>https://www.bestsky.club/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.bestsky.club/2020/07/05/%E6%B5%8B%E8%AF%954/"/>
     <id>https://www.bestsky.club/2020/07/05/%E6%B5%8B%E8%AF%954/</id>
     <published>2020-07-05T04:05:23.000Z</published>
-    <updated>2020-07-05T04:23:35.888Z</updated>
+    <updated>2020-07-05T04:25:52.528Z</updated>
     
     <content type="html"><![CDATA[<p>Java设计模式</p>]]></content>
     
@@ -36,13 +36,13 @@
     </summary>
     
     
+      <category term="Java" scheme="https://www.bestsky.club/categories/Java/"/>
+    
       <category term="Diary" scheme="https://www.bestsky.club/categories/Diary/"/>
     
       <category term="PlayStation" scheme="https://www.bestsky.club/categories/Diary/PlayStation/"/>
     
       <category term="Games" scheme="https://www.bestsky.club/categories/Diary/Games/"/>
-    
-      <category term="Life" scheme="https://www.bestsky.club/categories/Life/"/>
     
     
       <category term="设计模式" scheme="https://www.bestsky.club/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
@@ -54,7 +54,7 @@
     <link href="https://www.bestsky.club/2020/07/05/%E6%B5%8B%E8%AF%953/"/>
     <id>https://www.bestsky.club/2020/07/05/%E6%B5%8B%E8%AF%953/</id>
     <published>2020-07-05T03:58:28.000Z</published>
-    <updated>2020-07-05T03:59:08.104Z</updated>
+    <updated>2020-07-05T04:26:08.772Z</updated>
     
     <content type="html"><![CDATA[<p>Spring</p>]]></content>
     
@@ -81,7 +81,7 @@
     <link href="https://www.bestsky.club/2020/07/05/%E6%B5%8B%E8%AF%952/"/>
     <id>https://www.bestsky.club/2020/07/05/%E6%B5%8B%E8%AF%952/</id>
     <published>2020-07-05T03:46:42.000Z</published>
-    <updated>2020-07-05T03:50:01.382Z</updated>
+    <updated>2020-07-05T04:26:28.553Z</updated>
     
     <content type="html"><![CDATA[<p>Java源码</p>]]></content>
     
@@ -110,7 +110,7 @@
     <link href="https://www.bestsky.club/2020/07/05/%E6%B5%8B%E8%AF%951/"/>
     <id>https://www.bestsky.club/2020/07/05/%E6%B5%8B%E8%AF%951/</id>
     <published>2020-07-05T03:45:44.000Z</published>
-    <updated>2020-07-05T03:50:56.902Z</updated>
+    <updated>2020-07-05T04:26:37.187Z</updated>
     
     <content type="html"><![CDATA[<p>Java基础</p>]]></content>
     
