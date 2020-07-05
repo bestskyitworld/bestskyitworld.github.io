@@ -8,6 +8,19 @@
 ]]></content>
   </entry>
   <entry>
+    <title>测试2</title>
+    <url>/2020/07/05/%E6%B5%8B%E8%AF%952/</url>
+    <content><![CDATA[<p>Java源码</p>
+]]></content>
+      <categories>
+        <category>Java</category>
+        <category>源码</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>测试1</title>
     <url>/2020/07/05/%E6%B5%8B%E8%AF%951/</url>
     <content><![CDATA[<p>Java基础</p>
@@ -21,16 +34,15 @@
       </tags>
   </entry>
   <entry>
-    <title>测试2</title>
-    <url>/2020/07/05/%E6%B5%8B%E8%AF%952/</url>
-    <content><![CDATA[<p>Java源码</p>
+    <title>测试3</title>
+    <url>/2020/07/05/%E6%B5%8B%E8%AF%953/</url>
+    <content><![CDATA[<p>Spring</p>
 ]]></content>
       <categories>
-        <category>Java</category>
-        <category>源码</category>
+        <category>Spring</category>
       </categories>
       <tags>
-        <tag>Java</tag>
+        <tag>Spring</tag>
       </tags>
   </entry>
 </search>
