@@ -21,19 +21,6 @@
       </tags>
   </entry>
   <entry>
-    <title>测试2</title>
-    <url>/2020/07/05/%E6%B5%8B%E8%AF%952/</url>
-    <content><![CDATA[<p>Java源码</p>
-]]></content>
-      <categories>
-        <category>Java</category>
-        <category>源码</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>测试3</title>
     <url>/2020/07/05/%E6%B5%8B%E8%AF%953/</url>
     <content><![CDATA[<p>Spring</p>
@@ -46,15 +33,16 @@
       </tags>
   </entry>
   <entry>
-    <title>测试4</title>
-    <url>/2020/07/05/%E6%B5%8B%E8%AF%954/</url>
-    <content><![CDATA[<p>设计模式</p>
+    <title>测试2</title>
+    <url>/2020/07/05/%E6%B5%8B%E8%AF%952/</url>
+    <content><![CDATA[<p>Java源码</p>
 ]]></content>
       <categories>
-        <category>高级 设计模式</category>
+        <category>Java</category>
+        <category>源码</category>
       </categories>
       <tags>
-        <tag>设计模式</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
 </search>
