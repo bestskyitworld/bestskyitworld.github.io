@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>建设中</title>
-    <url>/2020/07/04/%E5%BB%BA%E8%AE%BE%E4%B8%AD/</url>
-    <content><![CDATA[<h1 id="努力建设中···"><a href="#努力建设中···" class="headerlink" title="努力建设中···"></a>努力建设中···</h1><p>​    努力成为更好的自己</p>
-<p><img src="/2020/07/04/%E5%BB%BA%E8%AE%BE%E4%B8%AD/image-20200704221555324.png" alt="image-20200704221555324"></p>
+    <title>测试1</title>
+    <url>/2020/07/05/%E6%B5%8B%E8%AF%951/</url>
+    <content><![CDATA[<p>Java基础</p>
 ]]></content>
+      <categories>
+        <category>Java</category>
+        <category>基础</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
   </entry>
   <entry>
     <title>测试2</title>
@@ -21,17 +27,11 @@
       </tags>
   </entry>
   <entry>
-    <title>测试1</title>
-    <url>/2020/07/05/%E6%B5%8B%E8%AF%951/</url>
-    <content><![CDATA[<p>Java基础</p>
+    <title>建设中</title>
+    <url>/2020/07/04/%E5%BB%BA%E8%AE%BE%E4%B8%AD/</url>
+    <content><![CDATA[<h1 id="努力建设中···"><a href="#努力建设中···" class="headerlink" title="努力建设中···"></a>努力建设中···</h1><p>​    努力成为更好的自己</p>
+<p><img src="/2020/07/04/%E5%BB%BA%E8%AE%BE%E4%B8%AD/image-20200704221555324.png" alt="image-20200704221555324"></p>
 ]]></content>
-      <categories>
-        <category>Java</category>
-        <category>基础</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
   </entry>
   <entry>
     <title>测试3</title>
@@ -43,6 +43,21 @@
       </categories>
       <tags>
         <tag>Spring</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>测试4</title>
+    <url>/2020/07/05/%E6%B5%8B%E8%AF%954/</url>
+    <content><![CDATA[<p>Java设计模式</p>
+]]></content>
+      <categories>
+        <category>Diary</category>
+        <category>PlayStation</category>
+        <category>Games</category>
+        <category>Life</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
       </tags>
   </entry>
 </search>
