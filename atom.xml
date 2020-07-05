@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.bestsky.club/"/>
-  <updated>2020-07-05T04:31:05.317Z</updated>
+  <updated>2020-07-05T04:34:07.488Z</updated>
   <id>https://www.bestsky.club/</id>
   
   <author>
@@ -17,19 +17,19 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>测试4</title>
-    <link href="https://www.bestsky.club/2020/07/05/%E6%B5%8B%E8%AF%954/"/>
-    <id>https://www.bestsky.club/2020/07/05/%E6%B5%8B%E8%AF%954/</id>
-    <published>2020-07-05T04:05:23.000Z</published>
-    <updated>2020-07-05T04:31:05.317Z</updated>
+    <title>设计模式测试</title>
+    <link href="https://www.bestsky.club/2020/07/05/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%B5%8B%E8%AF%95/"/>
+    <id>https://www.bestsky.club/2020/07/05/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%B5%8B%E8%AF%95/</id>
+    <published>2020-07-05T04:33:36.000Z</published>
+    <updated>2020-07-05T04:34:07.488Z</updated>
     
-    <content type="html"><![CDATA[<p>Java设计模式</p>]]></content>
+    <content type="html"><![CDATA[<p>设计模式 单例模式</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;Java设计模式&lt;/p&gt;
+        &lt;p&gt;设计模式 单例模式&lt;/p&gt;
 
       
     
