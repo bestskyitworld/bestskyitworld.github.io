@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.bestsky.club/"/>
-  <updated>2020-07-05T03:59:08.104Z</updated>
+  <updated>2020-07-05T04:06:21.245Z</updated>
   <id>https://www.bestsky.club/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>测试4</title>
+    <link href="https://www.bestsky.club/2020/07/05/%E6%B5%8B%E8%AF%954/"/>
+    <id>https://www.bestsky.club/2020/07/05/%E6%B5%8B%E8%AF%954/</id>
+    <published>2020-07-05T04:05:23.000Z</published>
+    <updated>2020-07-05T04:06:21.245Z</updated>
+    
+    <content type="html"><![CDATA[<p>设计模式</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;设计模式&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="高级 设计模式" scheme="https://www.bestsky.club/categories/%E9%AB%98%E7%BA%A7-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+      <category term="设计模式" scheme="https://www.bestsky.club/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>测试3</title>
