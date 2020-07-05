@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.bestsky.club/"/>
-  <updated>2020-07-04T14:18:41.017Z</updated>
+  <updated>2020-07-05T03:50:01.382Z</updated>
   <id>https://www.bestsky.club/</id>
   
   <author>
@@ -15,6 +15,64 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>测试2</title>
+    <link href="https://www.bestsky.club/2020/07/05/%E6%B5%8B%E8%AF%952/"/>
+    <id>https://www.bestsky.club/2020/07/05/%E6%B5%8B%E8%AF%952/</id>
+    <published>2020-07-05T03:46:42.000Z</published>
+    <updated>2020-07-05T03:50:01.382Z</updated>
+    
+    <content type="html"><![CDATA[<p>Java源码</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Java源码&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="https://www.bestsky.club/categories/Java/"/>
+    
+      <category term="源码" scheme="https://www.bestsky.club/categories/Java/%E6%BA%90%E7%A0%81/"/>
+    
+    
+      <category term="Java" scheme="https://www.bestsky.club/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>测试1</title>
+    <link href="https://www.bestsky.club/2020/07/05/%E6%B5%8B%E8%AF%951/"/>
+    <id>https://www.bestsky.club/2020/07/05/%E6%B5%8B%E8%AF%951/</id>
+    <published>2020-07-05T03:45:44.000Z</published>
+    <updated>2020-07-05T03:50:56.902Z</updated>
+    
+    <content type="html"><![CDATA[<p>Java基础</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Java基础&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="https://www.bestsky.club/categories/Java/"/>
+    
+      <category term="基础" scheme="https://www.bestsky.club/categories/Java/%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="Java" scheme="https://www.bestsky.club/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>建设中</title>
