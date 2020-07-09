@@ -30,7 +30,7 @@
 <p>学完SSM后一基本上可以在公司干点活儿啦，因为现在很多公司的项目都在用SSM，但如果想要进更好的公司，你还要继续学习。</p>
 <h2 id="阶段六：SpringBoot-VUE"><a href="#阶段六：SpringBoot-VUE" class="headerlink" title="阶段六：SpringBoot+VUE"></a>阶段六：SpringBoot+VUE</h2><p>当偷懒的程序员们对代码封装后开发了SSM框架后，发现还不够偷懒，因为配置文件是在是太多了，所以又开始研发新的框架（人类的懒惰是会让技术进步的），于是新的框架又产生了：SpringBoot。简单来讲，SpringBoot就是在原先SSM框架上又进行了一次封装，省去了很多配置文件。</p>
 <h3 id="Duubo-Zookeeper"><a href="#Duubo-Zookeeper" class="headerlink" title="Duubo+Zookeeper"></a>Duubo+Zookeeper</h3><p>在SpringBoot的学习中你将会学到这两项技术，它们是基于分布式系统提出的方案，也叫微服务。</p>
-<h5 id="VUE（真正实现了前后端分离）"><a href="#VUE（真正实现了前后端分离）" class="headerlink" title="VUE（真正实现了前后端分离）"></a>VUE（真正实现了前后端分离）</h5><p>这里又出现了前端的东西，VUE是一个前端的框架，在如今的前后端分离时代，前端只管写前端页面，后端只用提供接口就行，现在很多公司都要求后端开发会VUE（真是太难了）。</p>
+<h3 id="VUE（真正实现了前后端分离）"><a href="#VUE（真正实现了前后端分离）" class="headerlink" title="VUE（真正实现了前后端分离）"></a>VUE（真正实现了前后端分离）</h3><p>这里又出现了前端的东西，VUE是一个前端的框架，在如今的前后端分离时代，前端只管写前端页面，后端只用提供接口就行，现在很多公司都要求后端开发会VUE（真是太难了）。</p>
 <p>当你完成这一阶段的学习，你已经能去一些中型的公司啦，稍微找一家好点公司，月薪7k+应该问题不大。这时候你也成为了一个合格码农，但是码农其实是很低级的，对于聪明的你，应该有更高的追求。</p>
 <h2 id="阶段七：微服务"><a href="#阶段七：微服务" class="headerlink" title="阶段七：微服务"></a>阶段七：微服务</h2><h3 id="SpringCloud"><a href="#SpringCloud" class="headerlink" title="SpringCloud"></a>SpringCloud</h3><p>SpringCloud算是这几年的Web开发的潮流和趋势，它是基于分布式系统提出的一套完善的方案。你可以理解成有很多个SpringBoot的项目结合在一起，然后SpringCloud就是用来统一维护和管理这些项目(模块化)。大型公司都在用，但是小公司因为业务小的可怜，所以基本上也用不到，但这个技术一定是未来的趋势。学就完事了。</p>
 <h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><p>Git入门非常快，几个小时就搞定了，它主要是用来管理项目和团队开发的，这个在工作之前最好学一下。</p>
