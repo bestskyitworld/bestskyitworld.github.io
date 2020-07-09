@@ -1168,7 +1168,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ba7c53;
+  background: #fdf;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2742,16 +2742,16 @@ div#comments.comments.v {
   font-weight: 600;
 }
 .post-body h2:before {
-  content: "⛅️";
-}
-.post-body h3:before {
-  content: "☁️";
-}
-.post-body h4:before {
   content: "🍦";
 }
+.post-body h3:before {
+  content: "🌸";
+}
+.post-body h4:before {
+  content: "⛄️";
+}
 .post-body h5:before {
-  content: "🌼";
+  content: "🔥";
 }
 .post-body h6:before {
   content: "🌱";
