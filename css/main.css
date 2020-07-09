@@ -1168,7 +1168,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #f2c8ff;
+  background: #ff2bff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2722,6 +2722,39 @@ div#comments.comments.v {
 }
 .vcopy {
   display: none !important;
+}
+.post-body h2:before,
+.post-body h3:before,
+.post-body h4:before,
+.post-body h5:before,
+.post-body h6:before {
+  margin-right: 5px;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 1;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+}
+.post-body h2:before {
+  content: "🍦";
+}
+.post-body h3:before {
+  content: "🌸";
+}
+.post-body h4:before {
+  content: "⛄️";
+}
+.post-body h5:before {
+  content: "🔥";
+}
+.post-body h6:before {
+  content: "🌱";
 }
 @-moz-keyframes gradient {
   0% {
