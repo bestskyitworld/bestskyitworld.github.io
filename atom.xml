@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>全世界最好的Sky</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://www.bestsky.club/"/>
+  <updated>2020-07-09T06:11:36.095Z</updated>
+  <id>https://www.bestsky.club/</id>
+  
+  <author>
+    <name>BestSkyITWorld</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>聊一聊Java这条路该怎么走</title>
+    <link href="https://www.bestsky.club/2020/07/09/%E8%81%8A%E4%B8%80%E8%81%8AJava%E8%BF%99%E6%9D%A1%E8%B7%AF%E8%AF%A5%E6%80%8E%E4%B9%88%E8%B5%B0/"/>
+    <id>https://www.bestsky.club/2020/07/09/%E8%81%8A%E4%B8%80%E8%81%8AJava%E8%BF%99%E6%9D%A1%E8%B7%AF%E8%AF%A5%E6%80%8E%E4%B9%88%E8%B5%B0/</id>
+    <published>2020-07-09T05:17:46.000Z</published>
+    <updated>2020-07-09T06:11:36.095Z</updated>
+    
+    <content type="html"><![CDATA[<p>网上有很多关于Java学习路线的帖子，有些列了很长的思维导图，看着很费劲也看不明白，还有一些讲得太详细也有一些废话，对于初学者来说不太友好。今天我尽可能从零开始简洁的给大家讲讲从起步到工作需要哪些技术，这些技术大概是做什么的。</p><p><img src="/2020/07/09/%E8%81%8A%E4%B8%80%E8%81%8AJava%E8%BF%99%E6%9D%A1%E8%B7%AF%E8%AF%A5%E6%80%8E%E4%B9%88%E8%B5%B0/image-20200709140845370.png" alt="image-20200709140845370"></p><p>&lt;! – more –&gt;</p><h2 id="Java开发到底是做什么"><a href="#Java开发到底是做什么" class="headerlink" title="Java开发到底是做什么"></a>Java开发到底是做什么</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;网上有很多关于Java学习路线的帖子，有些列了很长的思维导图，看着很费劲也看不明白，还有一些讲得太详细也有一些废话，对于初学者来说不太友好。今天我尽可能从零开始简洁的给大家讲讲从起步到工作需要哪些技术，这些技术大概是做什么的。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2020/
+      
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="https://www.bestsky.club/categories/Java/"/>
+    
+      <category term="学习路线" scheme="https://www.bestsky.club/categories/Java/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/"/>
+    
+    
+      <category term="Java" scheme="https://www.bestsky.club/tags/Java/"/>
+    
+  </entry>
+  
+</feed>
