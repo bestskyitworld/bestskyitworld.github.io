@@ -103,8 +103,8 @@
   <entry>
     <title>设计模式-单例模式</title>
     <url>/2020/07/13/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</url>
-    <content><![CDATA[<p><img src="/2020/07/13/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/image-20200713193236863.png" alt="image-20200713193236863"></p>
-<h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><p>我们都知道在Java中可以new出一个或者多个对象实例，而所谓类的单例设计模式，就是采取一定的方法保证在整个的软件系统中，对某个类<label style="color:red">只能存在一个对象实例</label>，并且该类只提供一个取得其对象实例的<label style="color:red">静态方法</label>  。</p>
+    <content><![CDATA[<h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><p>我们都知道在Java中可以new出一个或者多个对象实例，而所谓的单例设计模式，就是采取一定的方法保证在整个的软件系统中，对某个类<label style="color:red">只能存在一个对象实例</label>，并且该类只提供一个获得其对象实例的<label style="color:red">静态方法</label>  。</p>
+<p><img src="/2020/07/13/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/image-20200713193236863.png" alt="image-20200713193236863"></p>
 <a id="more"></a>
 
 <h3 id="单例模式使用场景"><a href="#单例模式使用场景" class="headerlink" title="单例模式使用场景"></a>单例模式使用场景</h3><p>1、需要频繁的创建和销毁的对象</p>
@@ -121,7 +121,7 @@
 <p><label style="color:red">7)静态内部类  </label></p>
 <p><label style="color:red">8)枚举  </label></p>
 <p>tip:标红的是推荐使用，黑色表示能实现但是不推荐使用</p>
-<h3 id="（1）饿汉式（静态常量）"><a href="#（1）饿汉式（静态常量）" class="headerlink" title="（1）饿汉式（静态常量）"></a>（1）饿汉式（静态常量）</h3><p>基本步骤：构造器私有化（防止new）—–&gt;在类的内部创建对象—–&gt;对外提供一个获得对象实例的方法（getInstance）</p>
+<h3 id="（1）饿汉式（静态常量）"><a href="#（1）饿汉式（静态常量）" class="headerlink" title="（1）饿汉式（静态常量）"></a>（1）饿汉式（静态常量）</h3><p>基本步骤：构造器私有化（防止new）==&gt;在类的内部创建对象==&gt;对外提供一个获得对象实例的方法（getInstance）</p>
 <p>代码实现：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton01</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Singleton instance = Singleton.getInstance();</span><br><span class="line">        Singleton instance2 = Singleton.getInstance();</span><br><span class="line">		System.out.println(instance == instance2); <span class="comment">// true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="comment">//构造器私有化</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//创建对象</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> Singleton instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//对外提供方法获得对象</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
