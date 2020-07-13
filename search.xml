@@ -116,7 +116,7 @@
 <p><label style="color:red">2)饿汉式（静态代码块）  </label></p>
 <p>3)懒汉式(线程不安全) </p>
 <p>4)懒汉式(线程安全，同步方法) </p>
-<p>5)懒汉式(线程安全，同步代码块)  </p>
+<p>5)懒汉式(同步代码块)  </p>
 <p><label style="color:red">6)双重检查  </label></p>
 <p><label style="color:red">7)静态内部类  </label></p>
 <p><label style="color:red">8)枚举  </label></p>
@@ -165,8 +165,8 @@
 
 <p>总结：</p>
 <p>（1）这种方式采用了类装载的机制来保证初始化实例时只有一个线程：</p>
-<p>​                (1.1)静态内部类SingletonInstance在Singleton类被装载时并不会立即实例化，而是在需要实例化时，调用getInstance方法，才会装载SingletonInstance类，从而完成 Singleton的实例化。 （妙啊）</p>
-<p>​                (1.2)tip:  类的静态属性只会在第一次加载类的时候初始化，所以在这里，JVM帮助我们保证了线程的安全性，在类进行初始化时，别的线程是无法进入的。</p>
+<p><span class="github-emoji" alias="bulb" style fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a1.png?v8">&#x1f4a1;</span>静态内部类SingletonInstance在Singleton类被装载时并不会立即实例化，而是在需要实例化时，调用getInstance方法，才会装载SingletonInstance类，从而完成 Singleton的实例化。(妙啊<span class="github-emoji" alias="smiley" style fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f603.png?v8">&#x1f603;</span>）</p>
+<p><span class="github-emoji" alias="bulb" style fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a1.png?v8">&#x1f4a1;</span>tip:  类的静态属性只会在第一次加载类的时候初始化，所以在这里，JVM帮助我们保证了线程的安全性，在类进行初始化时，别的线程是无法进入的。</p>
 <p>（2）结论：</p>
 <p><label style="color:red">  避免了线程不安全，利用静态内部类特点实现延迟加载，效率高，推荐使用</label></p>
 <h3 id="（8）枚举"><a href="#（8）枚举" class="headerlink" title="（8）枚举"></a>（8）枚举</h3><p>代码：</p>
