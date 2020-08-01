@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="true">
+  <meta name="baidu-site-verification" content="true">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.bestsky.club","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="装饰者模式简介装饰者模式是将新功能动态的附加到对象上，在对象功能扩展方面，它比继承更有弹性，装饰者模式很好得体现了开闭原则(ocp)。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式-装饰者模式">
+<meta property="og:url" content="https://www.bestsky.club/2020/08/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/index.html">
+<meta property="og:site_name" content="全世界最好的Sky">
+<meta property="og:description" content="装饰者模式简介装饰者模式是将新功能动态的附加到对象上，在对象功能扩展方面，它比继承更有弹性，装饰者模式很好得体现了开闭原则(ocp)。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.bestsky.club/2020/08/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/image-20200801174019582.png">
+<meta property="og:image" content="https://www.bestsky.club/2020/08/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/image-20200801144342633.png">
+<meta property="og:image" content="https://www.bestsky.club/2020/08/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/image-20200801144828972.png">
+<meta property="og:image" content="https://www.bestsky.club/2020/08/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/image-20200801145027057.png">
+<meta property="og:image" content="https://www.bestsky.club/2020/08/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/image-20200801165735897.png">
+<meta property="og:image" content="https://www.bestsky.club/2020/08/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/image-20200801153712296.png">
+<meta property="og:image" content="https://www.bestsky.club/2020/08/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/image-20200801161351708.png">
+<meta property="og:image" content="https://www.bestsky.club/2020/08/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/image-20200801163238642.png">
+<meta property="og:image" content="https://www.bestsky.club/2020/08/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/image-20200801165239931.png">
+<meta property="og:image" content="https://www.bestsky.club/2020/08/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/image-20200801170109230.png">
+<meta property="og:image" content="https://www.bestsky.club/2020/08/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/image-20200801171606941.png">
+<meta property="og:image" content="https://www.bestsky.club/2020/08/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/image-20200801173901708.png">
+<meta property="article:published_time" content="2020-08-01T04:36:39.000Z">
+<meta property="article:modified_time" content="2020-08-01T09:42:35.392Z">
+<meta property="article:author" content="BestSkyITWorld">
+<meta property="article:tag" content="设计模式">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.bestsky.club/2020/08/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/image-20200801174019582.png">
+
+<link rel="canonical" href="https://www.bestsky.club/2020/08/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>设计模式-装饰者模式 | 全世界最好的Sky</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="全世界最好的Sky" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">全世界最好的Sky</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">人生本孤独，但你要活得有趣</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-life">
+
+    <a href="/life/" rel="section"><i class="fa fa-coffee fa-fw"></i>人生啊</a>
+
+  </li>
+        <li class="menu-item menu-item-zatan">
+
+    <a href="/zatan/" rel="section"><i class="fa fa-comment fa-fw"></i>杂谈</a>
+
+  </li>
+        <li class="menu-item menu-item-study">
+
+    <a href="/study/" rel="section"><i class="fa fa-graduation-cap fa-fw"></i>学习之道</a>
+
+  </li>
+        <li class="menu-item menu-item-zhuanti">
+
+    <a href="/zhuanti/" rel="section"><i class="fa fa-folder fa-fw"></i>专题</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.bestsky.club/2020/08/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="BestSkyITWorld">
+      <meta itemprop="description" content="专于技术，不止于技术">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="全世界最好的Sky">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          设计模式-装饰者模式
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-08-01 12:36:39 / 修改时间：17:42:35" itemprop="dateCreated datePublished" datetime="2020-08-01T12:36:39+08:00">2020-08-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">装饰者模式</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/08/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/08/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="装饰者模式简介"><a href="#装饰者模式简介" class="headerlink" title="装饰者模式简介"></a>装饰者模式简介</h2><p>装饰者模式是将新功能动态的附加到对象上，在对象功能扩展方面，它比继承更有弹性，装饰者模式很好得体现了开闭原则(ocp)。  </p>
+<p><img src="/2020/08/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/image-20200801174019582.png" alt="image-20200801174019582"></p>
+<a id="more"></a>
+
+<h2 id="问题引出"><a href="#问题引出" class="headerlink" title="问题引出"></a>问题引出</h2><p>现在有一个星巴克咖啡订单项目，具体需求如下：</p>
+<p>1) 咖啡种类/单品咖啡有：Espresso(意大利浓咖啡)、ShortBlack、LongBlack(美式咖啡)、Decaf(无因咖啡)</p>
+<p>2) 调料有：Milk(牛奶)、Soy(豆浆)、Chocolate(摩卡)</p>
+<p>要求：(1)在扩展新的咖啡种类时，具有良好的扩展性、改动方便、维护方便。(2)使用OO的来计算不同种类咖啡的费用: 客户可以点单品咖啡，也可以单品咖啡+调料组。(3设计两个方法，一个方法计算价格，另一个方法打印出咖啡的描述。</p>
+<h3 id="传统设计方案"><a href="#传统设计方案" class="headerlink" title="传统设计方案"></a>传统设计方案</h3><p>如果使用传统的设计，UML类图如下：</p>
+<p><img src="/2020/08/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/image-20200801144342633.png" alt="image-20200801144342633"></p>
+<p>这样设计的缺点就是类爆炸，各种单品咖啡和调料组合过多，产生的类就会程爆炸式增长，不利于代码的维护和扩展。</p>
+<p>网上有一张图很形象的提现出了”类爆炸”：</p>
+<p><img src="/2020/08/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/image-20200801144828972.png" alt="image-20200801144828972"></p>
+<p>这样的设计显然不合理，于是有人对这个方案进行了改进：</p>
+<h3 id="方案改进"><a href="#方案改进" class="headerlink" title="方案改进"></a>方案改进</h3><p>前面分析到方案1因为咖啡单品+调料组合会造成类的倍增，因此可以做改进，将调料内置到Drink类，这样就不会造成类数量过多。从而提高项目的维护性(如图)</p>
+<p><img src="/2020/08/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/image-20200801145027057.png" alt="image-20200801145027057"></p>
+<p>但是这样设计也有缺点，当我们要增加一种调料时，就会在超类Drink中新增一个属性，如果调料的价格发生改变，我们原有的代码cost方法进行修改，显然这样违背了<label style="color:#00CCFF">开闭原则。</label></p>
+<p>这两种方案都不能很好地满足项目需求，于是就有了装饰者模式，它可以同时解决类爆炸和满足OCP原则。</p>
+<h2 id="装饰者模式改进"><a href="#装饰者模式改进" class="headerlink" title="装饰者模式改进"></a>装饰者模式改进</h2><p>原理图：</p>
+<p><img src="/2020/08/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/image-20200801165735897.png" alt="image-20200801165735897"></p>
+<p>1) Component：主体：比如类似前面的Drink  </p>
+<p>2) ConcreteComponent：具体的主体，比如前面的各个单品咖啡  </p>
+<p>3) Decorator：装饰者，比如各调料</p>
+<p>装饰者模式就像打包一个快递，主体：比如：陶瓷、衣服 (Component) ；被装饰者：包装：比如：报纸填充、塑料泡沫、纸板、木板(Decorator)  </p>
+<p>tip：在如图的Component与 ConcreteComponent之间，如果 ConcreteComponent类很多，还可以设计一个缓冲层，将共有的部分提取出来，抽象成一个类。  </p>
+<p><img src="/2020/08/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/image-20200801153712296.png" alt="image-20200801153712296"></p>
+<p>项目结构：<img src="/2020/08/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/image-20200801161351708.png" alt="image-20200801161351708"></p>
+<p>代码如下：</p>
+<h3 id="Drink"><a href="#Drink" class="headerlink" title="Drink"></a>Drink</h3><p>首先设计Drink这个超类，所有的类都依赖于这个类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Drink</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> String des;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">float</span> price;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getDes</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> des;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setDes</span><span class="params">(String des)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.des = des;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">float</span> <span class="title">getPrice</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> price;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPrice</span><span class="params">(<span class="keyword">float</span> price)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.price = price;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">float</span> <span class="title">cost</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这里留一个抽象的cost方法，让子类去实现并计算总的费用</p>
+<h3 id="咖啡类去继承Drink类"><a href="#咖啡类去继承Drink类" class="headerlink" title="咖啡类去继承Drink类"></a>咖啡类去继承Drink类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Coffe</span> <span class="keyword">extends</span> <span class="title">Drink</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">float</span> <span class="title">cost</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">super</span>.getPrice();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="设计四种咖啡去继承Coffee类"><a href="#设计四种咖啡去继承Coffee类" class="headerlink" title="设计四种咖啡去继承Coffee类"></a>设计四种咖啡去继承Coffee类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DeCaf</span> <span class="keyword">extends</span> <span class="title">Coffe</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DeCaf</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        setDes(<span class="string">"无因咖啡"</span>);</span><br><span class="line">        setPrice(<span class="number">1.0f</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Espresso</span> <span class="keyword">extends</span> <span class="title">Coffe</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Espresso</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        setDes(<span class="string">"意式浓缩"</span>);</span><br><span class="line">        setPrice(<span class="number">6.0f</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LongBlack</span> <span class="keyword">extends</span> <span class="title">Coffe</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">LongBlack</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        setDes(<span class="string">"美式LongBlack"</span>);</span><br><span class="line">        setPrice(<span class="number">5.0f</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ShortBlack</span> <span class="keyword">extends</span> <span class="title">Coffe</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ShortBlack</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        setDes(<span class="string">"美式ShortBlack"</span>);</span><br><span class="line">        setPrice(<span class="number">4.0f</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="设计装饰者类-Decorator"><a href="#设计装饰者类-Decorator" class="headerlink" title="设计装饰者类(Decorator)"></a>设计装饰者类(Decorator)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Decorator</span> <span class="keyword">extends</span> <span class="title">Drink</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> Drink obj;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Decorator</span><span class="params">(Drink obj)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.obj = obj;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">float</span> <span class="title">cost</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">super</span>.getPrice() + obj.cost();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里的cost方法设计得很巧妙，运用了递归的思想，会在下面做详细的分析</p>
+<h3 id="设计三种具体的装饰者-调料"><a href="#设计三种具体的装饰者-调料" class="headerlink" title="设计三种具体的装饰者(调料)"></a>设计三种具体的装饰者(调料)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> decorator.Drink;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Chocolate</span> <span class="keyword">extends</span> <span class="title">Decorator</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Chocolate</span><span class="params">(Drink obj)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>(obj);</span><br><span class="line">		setDes(<span class="string">"巧克力"</span>);</span><br><span class="line">		setPrice(<span class="number">3.0f</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> decorator.Drink;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Milk</span> <span class="keyword">extends</span> <span class="title">Decorator</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">Milk</span><span class="params">(Drink obj)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">super</span>(obj);</span><br><span class="line">      setDes(<span class="string">"牛奶"</span>);</span><br><span class="line">      setPrice(<span class="number">2.0f</span>); </span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> decorator.Drink;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Soy</span> <span class="keyword">extends</span> <span class="title">Decorator</span></span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">Soy</span><span class="params">(Drink obj)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">super</span>(obj);</span><br><span class="line">      setDes(<span class="string">"豆汁"</span>);</span><br><span class="line">      setPrice(<span class="number">1.5f</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样，基于装饰者模式所有的类都设计好了，我们用客户端进行测试。</p>
+<h3 id="咖啡店"><a href="#咖啡店" class="headerlink" title="咖啡店"></a>咖啡店</h3><p>假设现在有一个订单，需要一杯LongBlack加一分牛奶和一份巧克力</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CoffeeBar</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		Drink order = <span class="keyword">new</span> LongBlack();</span><br><span class="line">		order.cost();</span><br><span class="line">		System.out.println(<span class="string">"单品咖啡费用 = "</span> + order.cost());</span><br><span class="line">		System.out.println(<span class="string">"描述 = "</span> + order.getDes());</span><br><span class="line">        </span><br><span class="line">		order = <span class="keyword">new</span> Milk(order);</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"order 加入一份牛奶 费用 = "</span> + order.cost());</span><br><span class="line">		System.out.println(<span class="string">"order 加入一份牛奶 当前添加 = "</span> + order.getDes());</span><br><span class="line"></span><br><span class="line">		order = <span class="keyword">new</span> Chocolate(order);</span><br><span class="line">        System.out.println(<span class="string">"order 加入一份牛奶和一份巧克力 费用 = "</span> + order.cost());</span><br><span class="line">		System.out.println(<span class="string">"order 加入一份牛奶和一份巧克力 当前添加 = "</span> + order.getDes());</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行结果：</p>
+<p><img src="/2020/08/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/image-20200801163238642.png" alt="image-20200801163238642"></p>
+<h3 id="流程分析"><a href="#流程分析" class="headerlink" title="流程分析"></a>流程分析</h3><p>在上面设计Decorator的时候提到过其中的cost方法运用了递归的思想，这里做一下详细的分析：</p>
+<p>第一次new了一杯单品咖啡LongBlack没有问题，具体看这行代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">order = <span class="keyword">new</span> Milk(order);</span><br></pre></td></tr></table></figure>
+
+<p>那我们在加入一份牛奶时，创建了Milk对象并把之前的LongBlack传给了它构造器，于是Milk对象中的obj就是LongBlack，这时调用cost方法，首先执行super.getPrice()得到牛奶的价格为2元，再执行obj.cost()方法，此时的obj就是LongBlack为5元，那么第一次的费用就是7元。到目前为止，还没有用到递归，在第二次加入巧克力时，会执行这行代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">order = <span class="keyword">new</span> Chocolate(order);</span><br></pre></td></tr></table></figure>
+
+<p>我们又把原来的order传给了chocolate，这时的order为Milk对象，再去调用cost方法，此时super.getPrice()得到巧克力的价格为3元，重点来了，执行obj.cost()方法，此时的obj也就是Milk对象会再次进入到它的cost方法，又会去执行super.getPrice()和obj.cost()，而这个obj就是原先保存在Milk中的LongBlack，于是就完成了最终的费用计算。</p>
+<p><img src="/2020/08/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/image-20200801165239931.png" alt="image-20200801165239931"></p>
+<h2 id="装饰者模式对比桥接模式"><a href="#装饰者模式对比桥接模式" class="headerlink" title="装饰者模式对比桥接模式"></a>装饰者模式对比桥接模式</h2><p>看过我前面写的桥接模式的小伙伴应该会发现这两种设计模式十分相像，好像都是将一个产品拆分成两个，我们对比一下类图：</p>
+<p><img src="/2020/08/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/image-20200801170109230.png" alt="image-20200801170109230"></p>
+<p>对比一下可以发现，主体部分都是抽象类，但区别在，桥接模式的行为实现者是被聚合到抽象类中，它们两者之间没有继承关系，而装饰者模式是将抽象类聚合到装饰者中，并且他们存在继承关系。网上有大佬总结出来两点：</p>
+<div class="note info">
+            <p>1、桥接模式中所说的分离，其实是指将结构与实现分离（当结构和实现有可能发生变化时）或属性与基于属性的行为进行分离；而装饰者只是对基于属性的行为进行封闭成独立的类。</p><p>2、桥接中的行为是横向的行为，行为彼此之间无关联；而装饰者模式中的行为具有可叠加性，其表现出来的结果是一个整体，一个各个行为组合后的一个结果。</p>
+          </div>
+
+<p>我觉得这样的总结对我来说不是很清晰，可能每个人的理解不同，这也很正常。</p>
+<p>但是以我的理解，它们最大的差异在于聚合的方向，谁聚合了一个类，谁就是主体，所以装饰者模式的重点就是装饰者，桥接模式的重点就是抽象类的实现子类。（可能说法不太严谨，见谅）</p>
+<h2 id="装饰者模式在JDK中的应用"><a href="#装饰者模式在JDK中的应用" class="headerlink" title="装饰者模式在JDK中的应用"></a>装饰者模式在JDK中的应用</h2><p>在JDK中，IO流就运用了装饰者模式：<br><img src="/2020/08/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/image-20200801171606941.png" alt="image-20200801171606941"></p>
+<p>代码说明</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.DataInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.FileInputStream;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Decorator</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        DataInputStream dis = <span class="keyword">new</span> DataInputStream(<span class="keyword">new</span> FileInputStream(<span class="string">"d:\\abc.txt"</span>));</span><br><span class="line">        System.out.println(dis.read());</span><br><span class="line">        dis.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>  说明 ：</p>
+<div class="note success">
+            <p>1、InputStream是抽象类,类似我们前面讲的Drink  </p><p>2、FileInputStream是InputStream子类，类似我们前面的DeCaf,  LongBlack </p><p>3、FilterInputStream是InputStream子类：类似我们前面的Decorator修饰者  </p><p>4、DataInputStream是FilterInputStream子类，具体的修饰者，类似前面的Milk, Soy等  </p><p>5、FilterInputStream类有protected volatile InputStream in 属性，即含有被装饰者</p><p>分析得出在jdk的io体系中，就是使用装饰者模式</p>
+          </div>
+
+<p>到此为止，装饰者模式就结束了，感谢您的阅读~</p>
+<p><img src="/2020/08/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/image-20200801173901708.png" alt="image-20200801173901708"></p>
+<p>——————设计模式持续更新中</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag"># 设计模式</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/07/31/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/" rel="prev" title="设计模式-桥接模式">
+      <i class="fa fa-chevron-left"></i> 设计模式-桥接模式
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#装饰者模式简介"><span class="nav-number">1.</span> <span class="nav-text">装饰者模式简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题引出"><span class="nav-number">2.</span> <span class="nav-text">问题引出</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#传统设计方案"><span class="nav-number">2.1.</span> <span class="nav-text">传统设计方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方案改进"><span class="nav-number">2.2.</span> <span class="nav-text">方案改进</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#装饰者模式改进"><span class="nav-number">3.</span> <span class="nav-text">装饰者模式改进</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Drink"><span class="nav-number">3.1.</span> <span class="nav-text">Drink</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#咖啡类去继承Drink类"><span class="nav-number">3.2.</span> <span class="nav-text">咖啡类去继承Drink类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设计四种咖啡去继承Coffee类"><span class="nav-number">3.3.</span> <span class="nav-text">设计四种咖啡去继承Coffee类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设计装饰者类-Decorator"><span class="nav-number">3.4.</span> <span class="nav-text">设计装饰者类(Decorator)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设计三种具体的装饰者-调料"><span class="nav-number">3.5.</span> <span class="nav-text">设计三种具体的装饰者(调料)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#咖啡店"><span class="nav-number">3.6.</span> <span class="nav-text">咖啡店</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#流程分析"><span class="nav-number">3.7.</span> <span class="nav-text">流程分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#装饰者模式对比桥接模式"><span class="nav-number">4.</span> <span class="nav-text">装饰者模式对比桥接模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#装饰者模式在JDK中的应用"><span class="nav-number">5.</span> <span class="nav-text">装饰者模式在JDK中的应用</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="BestSkyITWorld"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">BestSkyITWorld</p>
+  <div class="site-description" itemprop="description">专于技术，不止于技术</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">BestSkyITWorld</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">39k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">36 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'USHqmkFcYwsEOHzn02SAd2hl-gzGzoHsz',
+      appKey     : 'jl8QucTNJOJBhAlk3AoCJ0Ja',
+      placeholder: "在这里写下你的评论吧",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
