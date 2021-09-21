@@ -985,13 +985,14 @@ pre .javascript .function {
   color: var(--brand-hover-color);
 }
 .site-title {
+  color: #4f4f4f;
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 1.375em;
   font-weight: normal;
   margin: 0;
 }
 .site-subtitle {
-  color: #ddd;
+  color: #696969;
   font-size: 0.8125em;
   margin: 10px 0;
 }
@@ -1168,7 +1169,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #363898;
+  background: #ff95eb;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1368,7 +1369,7 @@ pre .javascript .function {
   font-size: 0.8125em;
 }
 .footer {
-  color: #00f5ff;
+  color: #483d8b;
   font-size: 0.875em;
   padding: 20px 0;
 }
