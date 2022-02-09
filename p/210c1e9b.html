@@ -29,23 +29,23 @@
 <meta property="og:site_name" content="全世界最好的Sky">
 <meta property="og:description" content="适配器模式简介适配器模式是将某个类的接口转换成客户端期望的另一个接口，主要目的是兼容，让原本因接口不匹配不能一起工作的两个类可以协同工作。其别名为包装器(Wrapper) 。适配器模式又可以细分为类适配器模式、对象适配器模式和接口适配器模式。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://bestsky.cloud/p/image-20200728190722200.png">
-<meta property="og:image" content="https://bestsky.cloud/p/image-20200728171152443.png">
-<meta property="og:image" content="https://bestsky.cloud/p/image-20200728171424195.png">
-<meta property="og:image" content="https://bestsky.cloud/p/image-20200728172230682.png">
-<meta property="og:image" content="https://bestsky.cloud/p/image-20200728174855214.png">
-<meta property="og:image" content="https://bestsky.cloud/p/image-20200728175826681.png">
-<meta property="og:image" content="https://bestsky.cloud/p/image-20200728180657117.png">
-<meta property="og:image" content="https://bestsky.cloud/p/image-20200728184104644.png">
-<meta property="og:image" content="https://bestsky.cloud/p/image-20200728184247354.png">
-<meta property="og:image" content="https://bestsky.cloud/p/image-20200728184353917.png">
-<meta property="og:image" content="https://bestsky.cloud/p/image-20200728191213166.png">
+<meta property="og:image" content="https://bestsky.cloud/p/210c1e9b/image-20200728190722200.png">
+<meta property="og:image" content="https://bestsky.cloud/p/210c1e9b/image-20200728171152443.png">
+<meta property="og:image" content="https://bestsky.cloud/p/210c1e9b/image-20200728171424195.png">
+<meta property="og:image" content="https://bestsky.cloud/p/210c1e9b/image-20200728172230682.png">
+<meta property="og:image" content="https://bestsky.cloud/p/210c1e9b/image-20200728174855214.png">
+<meta property="og:image" content="https://bestsky.cloud/p/210c1e9b/image-20200728175826681.png">
+<meta property="og:image" content="https://bestsky.cloud/p/210c1e9b/image-20200728180657117.png">
+<meta property="og:image" content="https://bestsky.cloud/p/210c1e9b/image-20200728184104644.png">
+<meta property="og:image" content="https://bestsky.cloud/p/210c1e9b/image-20200728184247354.png">
+<meta property="og:image" content="https://bestsky.cloud/p/210c1e9b/image-20200728184353917.png">
+<meta property="og:image" content="https://bestsky.cloud/p/210c1e9b/image-20200728191213166.png">
 <meta property="article:published_time" content="2020-07-28T08:33:40.000Z">
-<meta property="article:modified_time" content="2020-07-28T11:14:58.580Z">
+<meta property="article:modified_time" content="2022-02-09T14:28:07.275Z">
 <meta property="article:author" content="BestSkyITWorld">
 <meta property="article:tag" content="设计模式">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://bestsky.cloud/p/image-20200728190722200.png">
+<meta name="twitter:image" content="https://bestsky.cloud/p/210c1e9b/image-20200728190722200.png">
 
 <link rel="canonical" href="https://bestsky.cloud/p/210c1e9b.html">
 
@@ -253,10 +253,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-07-28 16:33:40 / 修改时间：19:14:58" itemprop="dateCreated datePublished" datetime="2020-07-28T16:33:40+08:00">2020-07-28</time>
+              <time title="创建时间：2020-07-28 16:33:40" itemprop="dateCreated datePublished" datetime="2020-07-28T16:33:40+08:00">2020-07-28</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-02-09 22:28:07" itemprop="dateModified" datetime="2022-02-09T22:28:07+08:00">2022-02-09</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -297,52 +303,52 @@
 
       
         <h2 id="适配器模式简介"><a href="#适配器模式简介" class="headerlink" title="适配器模式简介"></a>适配器模式简介</h2><p>适配器模式是将某个类的接口转换成客户端期望的另一个接口，主要目的是兼容，让原本因接口不匹配不能一起工作的两个类可以协同工作。其别名为包装器(Wrapper) 。适配器模式又可以细分为类适配器模式、对象适配器模式和接口适配器模式。</p>
-<p><img src="/p/image-20200728190722200.png" alt="image-20200728190722200"></p>
+<p><img src="/p/210c1e9b/image-20200728190722200.png" alt="image-20200728190722200"></p>
 <a id="more"></a>
 <h3 id="真实世界类比"><a href="#真实世界类比" class="headerlink" title="真实世界类比"></a>真实世界类比</h3><p>每个国家电源的插座都有不同的标准，如果要出国，可能会出现自己的适配器和别的国家插座接口不匹配的情况，因此有了多功能转换插头，它就充当了适配器的作用。</p>
-<p><img src="/p/image-20200728171152443.png" alt="image-20200728171152443"></p>
+<p><img src="/p/210c1e9b/image-20200728171152443.png" alt="image-20200728171152443"></p>
 <h3 id="实际开发"><a href="#实际开发" class="headerlink" title="实际开发"></a>实际开发</h3><p>假设我们在做一套股票看盘系统，数据提供方给我们提供 XML 格式数据，我们获取数据用来显示，随着系统的迭代，我们要整合一些第三方系统的对外数据，但是他们只提供获取 JSON 格式的数据接口。</p>
 <p>在不想改变原有代码逻辑的情况下，如何解决呢？</p>
 <p>这时候我们就可以创建一个「适配器」。这是一个特殊的对象， 能够转换对象接口， 使其能与其他对象进行交互。</p>
 <p>适配器模式通过封装对象将复杂的转换过程隐藏于幕后。 被封装的对象甚至察觉不到适配器的存在。</p>
-<p><img src="/p/image-20200728171424195.png" alt="image-20200728171424195"></p>
+<p><img src="/p/210c1e9b/image-20200728171424195.png" alt="image-20200728171424195"></p>
 <h2 id="代码演示"><a href="#代码演示" class="headerlink" title="代码演示"></a>代码演示</h2><p>我们以生活中充电为案例，来看看适配器是如何解决电压不兼容的问题。假设我们的手机充电需要的电压为5V，而插座提供给我们的电压为220V电压，那么手机的电源适配器就充当了适配器角色，它将电压降压后我们才能正常充电。</p>
 <p>思路分析：</p>
-<p>我们先设计出UML类图：<img src="/p/image-20200728172230682.png" alt="image-20200728172230682"></p>
+<p>我们先设计出UML类图：<img src="/p/210c1e9b/image-20200728172230682.png" alt="image-20200728172230682"></p>
 <p>这种设计方式是类适配器模式，最大的特点就是有继承关系，我们来看看具体的代码：</p>
 <h3 id="类适配器模式"><a href="#类适配器模式" class="headerlink" title="类适配器模式"></a>类适配器模式</h3><h4 id="Voltage220V-标准电压"><a href="#Voltage220V-标准电压" class="headerlink" title="Voltage220V(标准电压)"></a>Voltage220V(标准电压)</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Voltage220V</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">output220V</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> src = <span class="number">220</span>;</span><br><span class="line">        System.out.println(<span class="string">"电压为"</span> + scr + <span class="string">"伏"</span>);</span><br><span class="line">        <span class="keyword">return</span> src;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="Voltage5V-需要的电压"><a href="#Voltage5V-需要的电压" class="headerlink" title="Voltage5V(需要的电压)"></a>Voltage5V(需要的电压)</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Voltage5V</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">output5V</span><span class="params">()</span></span>;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="VoltageAdapter-适配器"><a href="#VoltageAdapter-适配器" class="headerlink" title="VoltageAdapter(适配器)"></a>VoltageAdapter(适配器)</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">VoltageAdapter</span> <span class="keyword">extends</span> <span class="title">Voltage220V</span> <span class="keyword">implements</span> <span class="title">Voltage5V</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">output5V</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> v = output220V();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> dst = v/<span class="number">44</span>;</span><br><span class="line">        </span><br><span class="line">        System.out.println(<span class="string">"适配器转换电压5V"</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> dst;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="Phone-手机"><a href="#Phone-手机" class="headerlink" title="Phone(手机)"></a>Phone(手机)</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Phone</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">charging</span><span class="params">(Voltage5V v)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> i = v.output5V();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (i == <span class="number">5</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">"电压符合，进行充电"</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">"电压不符合，无法充电"</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="Client-客户端"><a href="#Client-客户端" class="headerlink" title="Client(客户端)"></a>Client(客户端)</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Phone phone = <span class="keyword">new</span> Phone();</span><br><span class="line">        phone.charging(<span class="keyword">new</span> VoltageAdapter());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>运行一把：<img src="/p/image-20200728174855214.png" alt="image-20200728174855214"></p>
+<p>运行一把：<img src="/p/210c1e9b/image-20200728174855214.png" alt="image-20200728174855214"></p>
 <h5 id="类适配器模式分析"><a href="#类适配器模式分析" class="headerlink" title="类适配器模式分析"></a>类适配器模式分析</h5><p>在适配器类(VoltageAdapter)中继承了Voltage220V，我们知道一旦使用了继承，代码的耦合性就会增加，所以这算是一个缺点。但是它可以根据需求去重写里面的方法，这也是优点，所以有利也有弊。还有一点就是Voltage220V中的方法会在适配器类中暴露出来，这样增加了使用的成本。</p>
 <h3 id="对象适配器模式"><a href="#对象适配器模式" class="headerlink" title="对象适配器模式"></a>对象适配器模式</h3><p>(1)基本思路和类的适配器模式相同，只是将适配器类作修改，不是继承Voltage220V类，而是持有它的实例，以解决兼容性的问题。  </p>
 <p>(2)根据<label style="color:#00FFCC">“合成复用原则”</label>，在系统中尽量使用关联关系（聚合或组合）来替代继承关系。</p>
 <p>(3)对象适配器模式是适配器模式常用的一种。</p>
-<p>类图：<img src="/p/image-20200728175826681.png" alt="image-20200728175826681"></p>
+<p>类图：<img src="/p/210c1e9b/image-20200728175826681.png" alt="image-20200728175826681"></p>
 <p>代码实现：</p>
 <p>其他不变，我们对适配器类稍作修改：</p>
 <h4 id="改进VoltageAdapter"><a href="#改进VoltageAdapter" class="headerlink" title="改进VoltageAdapter"></a>改进VoltageAdapter</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">VoltageAdapter</span> <span class="keyword">implements</span> <span class="title">Voltage5V</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Voltage220V voltage220V = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">VoltageAdapter</span><span class="params">(Voltage220V voltage220V)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.voltage220V = voltage220V;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">output5V</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> dst = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">null</span> != voltage220V) &#123;</span><br><span class="line">            <span class="keyword">int</span> v = voltage220V.output220V();</span><br><span class="line"></span><br><span class="line">            dst = v/<span class="number">44</span>;</span><br><span class="line"></span><br><span class="line">            System.out.println(<span class="string">"使用对象适配器，进行适配~~"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> dst;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="Client"><a href="#Client" class="headerlink" title="Client"></a>Client</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Phone phone = <span class="keyword">new</span> Phone();</span><br><span class="line">        phone.charging(<span class="keyword">new</span> VoltageAdapter(<span class="keyword">new</span> Voltage220V()));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>运行一下：<img src="/p/image-20200728180657117.png" alt="image-20200728180657117"></p>
+<p>运行一下：<img src="/p/210c1e9b/image-20200728180657117.png" alt="image-20200728180657117"></p>
 <h5 id="对象适配器模式分析"><a href="#对象适配器模式分析" class="headerlink" title="对象适配器模式分析"></a>对象适配器模式分析</h5><p>对象适配器和类适配器其实算是同一种思想，只不过实现方式不同。  </p>
 <p>根据合成复用原则，使用组合替代继承，所以它解决了类适配器必须继承Voltage220V的局限性问题，也不再要求Voltage5V必须是接口。</p>
 <h5 id="总结：使用成本更低，更灵活。"><a href="#总结：使用成本更低，更灵活。" class="headerlink" title="总结：使用成本更低，更灵活。"></a>总结：使用成本更低，更灵活。</h5><h3 id="接口适配器模式"><a href="#接口适配器模式" class="headerlink" title="接口适配器模式"></a>接口适配器模式</h3><p>(这里讲接口适配器模式跟上面的案例没有关系)</p>
 <h4 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h4><p>接口适配器模式在窗体界面中应用最为广泛，在安卓中，我们添加监听器时，通常这个监听器需要实现一个接口，而这个接口中一般会有非常多的方法，假如有100个方法，但是我们只需要用到其中一两个，那么有没有办法可以不去实现这个接口的全部方法，而只去重写我们需要的那几个方法？接口适配器模式就能实现。</p>
 <h5 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想"></a>核心思想</h5><p>当不需要全部实现接口提供的方法时，可先设计一个抽象类实现接口，并为该接口中每个方法提供一个默认实现（空方法），那么该抽象类的子类可有选择地覆盖父类的某些方法来实现需求。</p>
 <h5 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h5><p>在java的awt中，如果我们想要关闭一个窗口，需要去添加WindowListener监听器，而这个监听器中有如下几个方法需要我们去实现：</p>
-<p><img src="/p/image-20200728184104644.png" alt="image-20200728184104644"></p>
+<p><img src="/p/210c1e9b/image-20200728184104644.png" alt="image-20200728184104644"></p>
 <p>但是我们只想用windowClosing这个方法，这时我们就可以用WindowAdapter这个类，我们来看看这个类的源码：</p>
-<p><img src="/p/image-20200728184247354.png" alt="image-20200728184247354"></p>
+<p><img src="/p/210c1e9b/image-20200728184247354.png" alt="image-20200728184247354"></p>
 <p>首先它是个抽象类，实现了WindowListener等接口中的方法，但都是空实现：</p>
-<p><img src="/p/image-20200728184353917.png" alt="image-20200728184353917"></p>
+<p><img src="/p/210c1e9b/image-20200728184353917.png" alt="image-20200728184353917"></p>
 <p>因此，当我们new一个WindowAdapter的匿名类时，就可以选择性的去实现其中的方法，这就是典型的接口适配器模式。</p>
 <h5 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h5><p>(1)适用于一个接口不想使用其所有的方法的情况下使用。</p>
 <p>(2)配合匿名类一起使用。</p>
 <h3 id="适配器模式在Spring中的应用"><a href="#适配器模式在Spring中的应用" class="headerlink" title="适配器模式在Spring中的应用"></a>适配器模式在Spring中的应用</h3><p>  SpringMVC中的DispatchServlet在处理请求时，会使用HandlerAdapter，它就使用了适配器模式。关于详细的源码分析因为太多了将在后续的专题更新~~</p>
 <p>到此为止，适配器模式就结束了，感谢您的阅读~</p>
-<p><img src="/p/image-20200728191213166.png" alt="image-20200728191213166"></p>
+<p><img src="/p/210c1e9b/image-20200728191213166.png" alt="image-20200728191213166"></p>
 <p>——————设计模式持续更新中</p>
 
     </div>
