@@ -1144,13 +1144,13 @@ pre .javascript .function {
   padding: 2px;
 }
 .site-author-name {
-  color: var(--text-color);
+  color: #1e90ff;
   font-weight: 600;
   margin: 0;
   text-align: center;
 }
 .site-description {
-  color: #999;
+  color: #00bfff;
   font-size: 0.8125em;
   margin-top: 0;
   text-align: center;
@@ -1169,7 +1169,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ff0aff;
+  background: #c9b5c4;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
